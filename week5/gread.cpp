@@ -1,14 +1,21 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int score;
+    int score,a;
     char grade;
+
+    cout << "How many time do you want to use?  ";
+    cin >> a;
+    
+
+for (int i = 0; i < a; i++ ){
+
     cout << "Please Enter your score : ";
     cin >> score;
-
+    
     if (score >= 0 && score <= 100)
     {
-        if (score <= 59)
+    if (score <= 59)
     { 
         grade = 'F';
     }else if (score <= 69)
@@ -24,13 +31,16 @@ int main(){
     {
         grade = 'A';
     }else{
-        cout << "error";
+        cout << "\nerror\n";
     }
     }else{
-        cout << "Please Enter score between 0 - 100";
+        cout << "\nPlease Enter score between 0 - 100\n";
+    }
+    cout << "Grade : " << grade << endl;
     }
     
     
-        cout << "Grade : " << grade;
+    
+        
     
 }
