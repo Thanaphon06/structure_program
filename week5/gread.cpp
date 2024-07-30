@@ -12,17 +12,37 @@ int main(){
 
 for (int i = 0; i < a; i++ ){
 
+    do
+    {
+        cout << "Please Enter your score homework(0-15) : ";
+        cin >> homework;
+    } while (homework <= 15 || homework >= 0);
     
-    cout << "Please Enter your score homework(15) : ";
-    cin >> homework;
-    cout << "Please Enter your score assignment(15) : ";
-    cin >> assignment;
-    cout << "Please Enter your score class room(10) : ";
-    cin >> class_room;
-    cout << "Please Enter your score mid term(30) : ";
-    cin >> mid;
-    cout << "Please Enter your score final term(30) : ";
-    cin >> final;
+    do
+    {
+        cout << "Please Enter your score assignment(0-15) : ";
+        cin >> assignment;
+    } while (assignment <= 15 || assignment >= 0);
+    
+    do
+    {
+        cout << "Please Enter your score class room(0-10) : ";
+        cin >> class_room;
+    } while (assignment <= 10 || assignment >= 0);
+    
+    do
+    {
+        cout << "Please Enter your score mid term(0-30) : ";
+        cin >> mid;
+    } while (assignment <= 30 || assignment >= 0);
+    
+    do
+    {
+        cout << "Please Enter your score final term(0-30) : ";
+        cin >> final;
+    } while (assignment <= 30 || assignment >= 0);
+    
+    
 
     score = homework + assignment + class_room + mid + final;
 
