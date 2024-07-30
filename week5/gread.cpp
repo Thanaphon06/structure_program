@@ -28,22 +28,21 @@ for (int i = 0; i < a; i++ ){
     {
         cout << "Please Enter your score class room(0-10) : ";
         cin >> class_room;
-    } while (assignment <= 10 || assignment >= 0);
+    } while (class_room <= 10 || class_room >= 0);
     
     do
     {
         cout << "Please Enter your score mid term(0-30) : ";
         cin >> mid;
-    } while (assignment <= 30 || assignment >= 0);
+    } while (mid <= 30 || mid >= 0);
     
     do
     {
         cout << "Please Enter your score final term(0-30) : ";
         cin >> final;
-    } while (assignment <= 30 || assignment >= 0);
+    } while (final <= 30 || final >= 0);
     
     
-
     score = homework + assignment + class_room + mid + final;
 
     if (score >= 0 && score <= 100)
@@ -72,6 +71,5 @@ for (int i = 0; i < a; i++ ){
     cout << "Your score = " << score << endl;
     cout << "Grade : " << grade << endl;
     }
-    
     
 }
