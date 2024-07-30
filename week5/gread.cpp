@@ -16,31 +16,31 @@ for (int i = 0; i < a; i++ ){
     {
         cout << "Please Enter your score homework(0-15) : ";
         cin >> homework;
-    } while (homework <= 15 || homework >= 0);
-    
+    } while (homework > 15 || homework < 0);
+
     do
     {
         cout << "Please Enter your score assignment(0-15) : ";
         cin >> assignment;
-    } while (assignment <= 15 || assignment >= 0);
-    
+    } while (assignment > 15 || assignment < 0);
+
     do
     {
         cout << "Please Enter your score class room(0-10) : ";
         cin >> class_room;
-    } while (class_room <= 10 || class_room >= 0);
-    
+    } while (class_room > 10 || class_room < 0);
+
     do
     {
         cout << "Please Enter your score mid term(0-30) : ";
         cin >> mid;
-    } while (mid <= 30 || mid >= 0);
-    
+    } while (mid > 30 || mid < 0);
+
     do
     {
         cout << "Please Enter your score final term(0-30) : ";
         cin >> final;
-    } while (final <= 30 || final >= 0);
+    } while (final > 30 || final < 0);
     
     
     score = homework + assignment + class_room + mid + final;
