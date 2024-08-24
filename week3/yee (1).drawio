@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net" modified="2024-07-23T00:05:32.010Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0" etag="tq9zrIXO39jGnBKx_ao3" version="24.7.2" type="device">
+  <diagram name="Page-1" id="-cPxP2gi7y1NE4J5ghY1">
+    <mxGraphModel dx="1420" dy="716" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-1" target="gGxP5FPv9o_c-zDhweCf-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-1" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="343.13" y="70" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-2" target="gGxP5FPv9o_c-zDhweCf-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-2" value="int number , digit1 , digit2 , digit3 , digit4" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="325.63" y="160" width="135" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-4" target="gGxP5FPv9o_c-zDhweCf-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-4" value="input number&lt;div&gt;(4digit)&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="334.38" y="270" width="117.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-5" target="gGxP5FPv9o_c-zDhweCf-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-5" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit1 = number / 1000;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit2 = (number / 100) % 10;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit3 = (number / 10) % 10;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit4 = number % 10 ;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="370" width="246.25" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-9" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="343.13" y="650" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-16" target="gGxP5FPv9o_c-zDhweCf-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-16" value="output digit1 , digit2&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;,&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;digit3 , digit4&lt;/span&gt;&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="310.32" y="540" width="165.62" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-19" target="gGxP5FPv9o_c-zDhweCf-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-19" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="343.12" y="1160" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-20" target="gGxP5FPv9o_c-zDhweCf-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-20" value="int number , digit1 , digit2 , digit3 , digit4,&lt;div&gt;binary&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="325.62" y="1260" width="135" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-21" target="gGxP5FPv9o_c-zDhweCf-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-21" value="input number&lt;div&gt;(4digit)&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="334.37" y="1370" width="117.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-24" target="gGxP5FPv9o_c-zDhweCf-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-24" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit1 = number / 1000;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit2 = (number / 100) % 10;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit3 = (number / 10) % 10;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;font color=&quot;#0d0d0d&quot;&gt;digit4 = number % 10 ;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270.01" y="1470" width="246.25" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-26" target="gGxP5FPv9o_c-zDhweCf-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-26" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; text-align: left; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;binary &amp;nbsp;= (digit1 * 8) + &lt;/div&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;(digit2 * 4) + &lt;/div&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;(digit3 * 2) + (digit4 * 1);&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="278.14" y="1630" width="229.99" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-31" target="gGxP5FPv9o_c-zDhweCf-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-31" value="output digit1 , digit2&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;,&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;digit3 , digit4&lt;/span&gt;&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="310.31" y="1790" width="165.62" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-33" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="343.13" y="1900" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-36" target="gGxP5FPv9o_c-zDhweCf-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-36" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="349.07" y="2270" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="gGxP5FPv9o_c-zDhweCf-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="399" y="2480" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-37" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;float car_start , car_end , &lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;time_hour,time_minute,&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;time_sec ,distance,&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;time_used,kph;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="281.88" y="2370" width="234.38" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-39" target="gGxP5FPv9o_c-zDhweCf-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-39" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;input&amp;nbsp;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; white-space: pre; background-color: initial;&quot;&gt;car_start , &lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; white-space: pre; background-color: initial;&quot;&gt;car_end , &lt;/span&gt;&lt;/font&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot;&gt;time_hour,&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot;&gt;time_minute,&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; line-height: 19px; white-space: pre;&quot;&gt;&lt;font size=&quot;3&quot;&gt;time_sec &lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="276.27" y="2530" width="245.6" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-42" target="gGxP5FPv9o_c-zDhweCf-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-42" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;&lt;div style=&quot;&quot;&gt;distance = car_end - car_start;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&amp;nbsp; &amp;nbsp; time_used = time_hour + (time_minute / 60.0) + (time_sec / 3600.0);&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&amp;nbsp; &amp;nbsp; &lt;/div&gt;&lt;div style=&quot;&quot;&gt;&amp;nbsp; &amp;nbsp; kph = distance / time_used;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;strokeWidth=2;rounded=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="122.92999999999999" y="2700" width="552.27" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gGxP5FPv9o_c-zDhweCf-44" target="gGxP5FPv9o_c-zDhweCf-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-44" value="output distance ,&lt;div&gt;time_used ,&lt;/div&gt;&lt;div&gt;kph&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="305.33" y="2880" width="187.47" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gGxP5FPv9o_c-zDhweCf-46" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="349.07" y="3010" width="100.94" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
