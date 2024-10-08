@@ -7,34 +7,35 @@ int main() {
 
     ifstream Infile;
     ofstream OutFile;
-    bool inWord = false;  // ใช้เพื่อติดตามว่าเราอยู่ในคำหรือไม่
+    bool inWord = false;  
     
-    string text, yaimak = "yee.txt";
+    string text, yaimak;
+
+    cout << "Enter file name (.txt) : ";
+    getline(cin, yaimak);
     
     int wordCount = 0, sentenceCount = 0;
     
-    // เขียนข้อมูลลงไฟล์
+    // สร้างไฟล์ที่มีข้อความลงไป
     OutFile.open(yaimak.c_str());
-    cout << "Enter a paragraph: ";
-    getline(cin, text);  // ใช้ getline เพื่ออ่านทั้งบรรทัดรวมถึงช่องว่าง
-    OutFile << text;
-    cout << endl;
-    OutFile.close();
+        cout << "Enter a paragraph: ";
+        getline(cin, text);  
+        OutFile << text;
+        cout << endl;
+    OutFile.close(); //เปิดแล้วต้องปิด
     
-    // เปิดไฟล์เพื่ออ่านข้อมูล
-    Infile.open(yaimak.c_str());
+    Infile.open(yaimak.c_str());// เปิดไฟล์เพื่ออ่านข้อมูล
 
-    // เริ่มนับคำและประโยค
     char c;
-    while (Infile.get(c)) {  // อ่านตัวอักษรทีละตัวจากไฟล์
-        // นับคำ
-        if (isspace(c)) {  // ถ้าเจอช่องว่าง แสดงว่าจบคำ
+    while (Infile.get(c)) {  //ฟังชั่น get(c) คือการนับทีละตัวในไฟล์แล้วคืนค่า true false
+   
+        if (isspace(c)) {  
             if (inWord) {
                 wordCount++;
-                inWord = false;  // ออกจากสถานะอยู่ในคำ
+                inWord = false;  
             }
         } else {
-            inWord = true;  // ถ้าไม่ใช่ช่องว่างแสดงว่าเราอยู่ในคำ
+            inWord = true;  
         }
 
         // นับประโยค
@@ -42,15 +43,13 @@ int main() {
             sentenceCount++;
         }
     }
-
-    // เพิ่มคำสุดท้ายถ้ามี
+    
     if (inWord) {
         wordCount++;
     }
 
     Infile.close();  
 
-    // แสดงผลการนับ
     cout << "Number of words: " << wordCount << endl;
     cout << "Number of sentences: " << sentenceCount << endl;
 
