@@ -2,6 +2,8 @@
 #include <cmath>
 #include <iomanip>
 #include <limits>
+#include <fstream>
+#include <filesystem>
 using namespace std;
 
 
@@ -27,6 +29,21 @@ bool use_again_na(){
 void calculateRetirementSavings() {
     int currentAge, retirementAge, lifespanAge;
     double monthlyExpense, totalSavingsNeeded, monthlySavings;
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
 
     cout << "-------------------------------" << endl;
     cout << "financial planning for retirement" << endl; //โปรแกรมคำนวณการออมเพื่อการเกษียณ
@@ -75,22 +92,41 @@ void calculateRetirementSavings() {
     cout << setw(30) << left << "Total savings needed:" << setw(15) << right << fixed << setprecision(2) << totalSavingsNeeded << " Baht" << endl; //รวมเงินออมที่ต้องออม:
     cout << setw(30) << left << "Monthly savings required:" << setw(15) << right << monthlySavings << " Baht" << endl; //เงินออมที่ต้องออมต่อเดือน:
     cout << "---------------------------------------------------------\n";
+
+    save_file.open(full_path.c_str());
+        save_file << "-------------------------------" << endl;
+        save_file << "financial planning for retirement" << endl;
+        save_file << "-------------------------------" << endl;
+        save_file << "\nRetirement Savings Plan\n";
+        save_file << "---------------------------------------------------------\n";
+        save_file << setw(30) << left << "Years until retirement:" << setw(15) << right << yearsToRetirement << endl;  //จำนวนปีจนถึงเกษียณ:
+        save_file << setw(30) << left << "Years after retirement:" << setw(15) << right << yearsAfterRetirement << endl;  //จำนวนปีหลังเกษียณอายุ:
+        save_file << setw(30) << left << "Total savings needed:" << setw(15) << right << fixed << setprecision(2) << totalSavingsNeeded << " Baht" << endl; //รวมเงินออมที่ต้องออม:
+        save_file << setw(30) << left << "Monthly savings required:" << setw(15) << right << monthlySavings << " Baht" << endl; //เงินออมที่ต้องออมต่อเดือน:
+        save_file << "---------------------------------------------------------\n";
+    save_file.close();
+
 }
 
-// function car and house (2.โปรแกรมวางแผนการผ่อนบ้าน และ ผ่อนรถ)
-double calculate_car_house_Payment(double limit, double Interest, int years) {
-    // แปลงอัตราดอกเบี้ยต่อปีเป็นอัตราดอกเบี้ยรายเดือน
-    double monthly_Interest = Interest / 100 / 12;
-    //  คำนวณจำนวนงวดทั้งหมด (เดือน)
-    int number_Payments = years * 2;
-    // คำนวณค่างวดรายเดือนตามสูตร
-    double monthly_Payment = (limit * monthly_Interest * pow(1 + monthly_Interest, number_Payments)) / (pow(1 + monthly_Interest, number_Payments) - 1);
-    return monthly_Payment;
-}
 
 void calculateSavingsPlan() {
     string savingsGoal;
     double currentSavings, targetSavings, yearsToSave;
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
 
     cout << "----------------------------------" << endl;
     cout << "Goal savings planning" << endl;
@@ -145,6 +181,19 @@ void calculateSavingsPlan() {
     cout << setw(25) << left << "Yearly Savings Required:" << setw(15) << right << yearlySaving << " Baht" << endl;
     cout << setw(25) << left << "Monthly Savings Required:" << setw(15) << right << monthlySaving << " Baht" << endl;
     cout << "---------------------------------------------------------\n";
+    
+    save_file.open(full_path.c_str());
+        save_file << "----------------------------------" << endl;
+        save_file << "Goal savings planning" << endl;
+        save_file << "----------------------------------" << endl;
+        save_file << "\nSavings Plan Summary\n";
+        save_file << "---------------------------------------------------------\n";
+        save_file << setw(25) << left << "Savings Goal:" << setw(15) << right << savingsGoal << endl;
+        save_file << setw(25) << left << "Total Amount to Save:" << setw(15) << right << fixed << setprecision(2) << amountToSave << " Baht" << endl;
+        save_file << setw(25) << left << "Yearly Savings Required:" << setw(15) << right << yearlySaving << " Baht" << endl;
+        save_file << setw(25) << left << "Monthly Savings Required:" << setw(15) << right << monthlySaving << " Baht" << endl;
+        save_file << "---------------------------------------------------------\n";
+    save_file.close();
 }
 
 //สร้าง struct เพื่อเก็บค่าต่าง หลายค่า (5.โปรแกรมการจัดการหนี้ ดอกเบี้ยแบบคงที่)
@@ -189,9 +238,26 @@ int user_selection(){
 }
 
 void homencarplanning(){
-    double limit_Money; // วงเงินกู้ ยืมเงินต้นมากจากธนาคารเท่าไหร่
+        double limit_Money; // วงเงินกู้ ยืมเงินต้นมากจากธนาคารเท่าไหร่
         double interest; // อัตราดอกเบี้ยต่อปี
         int years; // ระยะเวลาผ่อน (ปี)
+        
+        ofstream save_file;
+        string save_file_name , full_path , floder_path = "./save/";
+
+        cout << "Enter file name to save : " ;
+        cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+        getline(cin, save_file_name);
+        cout << endl;
+    
+        full_path = floder_path + save_file_name;
+
+        // Create the folder if it doesn't exist
+        if (!filesystem::exists(floder_path)) {
+            filesystem::create_directory(floder_path);  // Create the folder
+            cout << "Directory created: " << floder_path << endl;
+        }
+
         cout << "-------------------------------" << endl;
         cout << "Home and car payment planning " << endl; //โปรแกรมวางแผนการผ่อนบ้าน และ ผ่อนรถ
         cout << "-------------------------------" << endl;
@@ -205,14 +271,47 @@ void homencarplanning(){
 
         cout << "Please enter the repayment period (years) : ";
         cin >> years;
+        
+        // function car and house (2.โปรแกรมวางแผนการผ่อนบ้าน และ ผ่อนรถ)
 
-        int calculate_car_house = calculate_car_house_Payment(limit_Money, interest, years);
-        cout << "Monthly installment amount : " << calculate_car_house << " Bath" << endl;
+        // แปลงอัตราดอกเบี้ยต่อปีเป็นอัตราดอกเบี้ยรายเดือน
+        double monthly_Interest = interest / 100 / 12;
+        //  คำนวณจำนวนงวดทั้งหมด (เดือน)
+        int number_Payments = years * 2;
+        // คำนวณค่างวดรายเดือนตามสูตร
+        double monthly_Payment = (limit_Money * monthly_Interest * pow(1 + monthly_Interest, number_Payments)) / (pow(1 + monthly_Interest, number_Payments) - 1);
+    
+
+        cout << "Monthly installment amount : " << monthly_Payment << " Bath" << endl;
         cout << "End Program" << " Thank you"<< endl;
+
+        save_file.open(full_path.c_str());
+            save_file << "-------------------------------" << endl;
+            save_file << "Home and car payment planning " << endl; //โปรแกรมวางแผนการผ่อนบ้าน และ ผ่อนรถ
+            save_file << "-------------------------------" << endl;
+            save_file << "Monthly installment amount : " << monthly_Payment << " Bath" << endl;
+            save_file << "End Program" << " Thank you"<< endl;
+        save_file.close();
 }
 
 void DollarCost(){
-    cout << "-------------------------------" << endl;
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
+
+        cout << "-------------------------------" << endl;
         cout << "Dollar-Cost Averaging (DCA) investment calculator" << endl; //โปรแกรมคำนวณการออมเพื่อการเกษียณ
         cout << "-------------------------------" << endl;
         double initialPrincipal, monthlySavings, annualInterestRate;
@@ -244,10 +343,46 @@ void DollarCost(){
         cout << "-------------------------------------------";
         cout << "\nFinal value after " << years << " years: " << futureValue << endl;
         cout << "===========================================\n";
+
+        save_file.open(full_path.c_str());
+            save_file << "-------------------------------" << endl;
+            save_file << "Dollar-Cost Averaging (DCA) investment calculator" << endl; //โปรแกรมคำนวณการออมเพื่อการเกษียณ
+            save_file << "-------------------------------" << endl;
+            save_file << fixed << setprecision(2);
+            save_file << "===========================================\n";
+            save_file << "Year\t\tFuture Value\n";
+            save_file << "-------------------------------------------\n";
+
+            futureValue = initialPrincipal;
+            for (int year = 1; year <= years; ++year) {
+                for (int month = 1; month <= 12; ++month) {
+                    futureValue = futureValue * (1 + monthlyInterestRate) + monthlySavings;
+                }
+                save_file << year << "\t\t" << futureValue << endl;
+            }
+            save_file << "-------------------------------------------";
+            save_file << "\nFinal value after " << years << " years: " << futureValue << endl;
+            save_file << "===========================================\n";
+        save_file.close();
+
 }
 
 void interest_debt(){
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
 
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
     int money; 
         double Interestperyears;
         int months;
@@ -271,9 +406,32 @@ void interest_debt(){
         cout << "Total interest : "<< result.total << endl;
         cout << "Total payment amount : " << result.Must_pay_per_month << endl;
     
+        save_file.open(full_path.c_str());
+            save_file << "-------------------------" << endl;
+            save_file << "interest debt management" << endl;
+            save_file << "-------------------------" << endl;
+            save_file << "Minimum payment per month : " << result.Monthly_principal << endl;
+            save_file << "Total interest : "<< result.total << endl;
+            save_file << "Total payment amount : " << result.Must_pay_per_month << endl;
+        save_file.close();
 }
 
 void Survival_ratio(){
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
      int monthly_income, Expenses_month, balance;
         cout << endl;
         cout << "-----------------------------------" << endl;
@@ -295,11 +453,41 @@ void Survival_ratio(){
         }
         cout << "---------------" << endl;
         cout << "Thank you for using our service";
+
+        save_file.open(full_path.c_str());
+
+            save_file << "-----------------------------------" << endl;
+            save_file << "Survival ratio calculation" << endl;
+            save_file << "-----------------------------------" << endl;
+             if(balance > 1) {
+            save_file << "Reduce new debt and increase savings." << endl;
+            } else {
+            save_file << "You are at risk in terms of your lifestyle, you should carefully consider your spending." << endl;
+            }
+            save_file << "---------------" << endl;
+        save_file.close();
 }
 
 
 void liqidity_ratio(){
-int flow_balance , dept , total;
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
+
+
+    int flow_balance , dept , total;
         cout << endl;
         cout << "------------------------------" << endl;
         cout << "Liquidity ratio calculation " << endl;
@@ -321,11 +509,44 @@ int flow_balance , dept , total;
         }else{
             cout << "Something went wrong!";
         }
+
+        save_file.open(full_path.c_str());
+        
+            save_file << "------------------------------" << endl;
+            save_file << "Liquidity ratio calculation " << endl;
+            save_file << "------------------------------" << endl;
+            if (total >= 1)
+            {
+                save_file << "Having enough savings to pay off short-term debt.";
+            }else if (total < 1)
+            {
+                save_file << "There is a risk in maintaining your lifestyle or becoming delinquent on debt.";
+            }else{
+                save_file << "Something went wrong!";
+            }
+        save_file.close();
 }
 
 void basic_liqidity(){
- float balacne , pay_per_mouth;
-        cout << endl;
+    
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
+
+    float balacne , pay_per_mouth;
+        
         cout << "------------------------------" << endl;
         cout << "Basic liquidity ratio calculation " << endl;
         cout << "------------------------------" << endl;
@@ -343,23 +564,65 @@ void basic_liqidity(){
             cout << "You having an emergency fund for unexpected expenses." << endl;
             //แสดง มีเงินสำรองไว้ใช้จ่ายยามฉุกเฉิน ลดโอกาสการรบกวนเงินลงทุน
             //เพื่ออนาคตมาใช้จ่าย หรือการก่อหนี้เพิ่ม
-
         }
         else if (result < 3)
         {
             cout << "You having too little money increases the chances of disrupting investments or incurring more debt." << endl;
-            
             //แสดง มีเงินน้อยเกินไป มีโอกาสการรบกวนเงินลงทุนหรือการก่อหนี้เพิ่ม
         }
         else{
             cout << "Try again";
         }
+
+    // Open the file for writing
+    save_file.open(full_path.c_str());
+
+    // Check if the file was successfully opened
+    if (!save_file) {
+        cout << "Error: Could not open file for saving!" << endl;
+        return;
+    }
+
+    // Write to the file
+    save_file << "------------------------------" << endl;
+    save_file << "Basic liquidity ratio calculation" << endl;
+    save_file << "------------------------------" << endl;
+    
+    save_file << "Balance: " << balacne << endl;
+    save_file << "Monthly Spending: " << pay_per_mouth << endl;
+    save_file << "Liquidity Ratio: " << result << endl;
+
+    if (result > 3) {
+        save_file << "You have an emergency fund for unexpected expenses." << endl;
+    } else if (result < 3) {
+        save_file << "You have too little money, increasing the chances of disrupting investments or incurring more debt." << endl;
+    } else {
+        save_file << "Try again." << endl;
+    }
+
+    save_file.close();
 }
 
 
 void tax_cal(){
-    float income_per_m , payment , balance , ip_year , balacne_tax , tax  ;
-    float parent = 3 , d_parent;
+    ofstream save_file;
+    string save_file_name , full_path , floder_path = "./save/";
+
+    cout << "Enter file name to save : " ;
+    cin.ignore(); //ไม่รู้เหมือนกันคืออะไร แต่ต้องใช้ไม่่งั้นgetline จะ skip
+    getline(cin, save_file_name);
+    cout << endl;
+    
+    full_path = floder_path + save_file_name;
+
+    // Create the folder if it doesn't exist
+    if (!filesystem::exists(floder_path)) {
+        filesystem::create_directory(floder_path);  // Create the folder
+        cout << "Directory created: " << floder_path << endl;
+    }
+    double income_per_m , payment , balance , ip_year , balacne_tax , tax  ;
+    double parent = 3 , d_parent;
+    bool tax_fund = true;
     cout << endl;
     cout << "----------------------" << endl;
     cout << "Tax calculation" << endl;
@@ -388,7 +651,8 @@ void tax_cal(){
     
     if (balacne_tax < 150000)
     {
-        cout << "Your so broke  ";
+        tax_fund = false;
+        
     }
     else if (balacne_tax > 5000000)
     {
@@ -415,10 +679,46 @@ void tax_cal(){
         tax = ((balacne_tax - 150000) * 0.05);
     }
 
-    cout << balance << endl;
-    cout << balacne_tax << endl;
-    cout << tax << endl;
-    //แสดง รายได้สุทธิ, รายได้นำไปคิดภาษี, ภาษี
+    
+    if (tax_fund)
+    {
+        cout << fixed << setprecision(2);
+        cout << "Net income : " << balance << endl;
+        cout << "Income after deductions : " << balacne_tax << endl;
+        cout << "tax payable : " << tax << endl;
+        //แสดง รายได้สุทธิ, รายได้นำไปคิดภาษี, ภาษี
+        save_file.open(full_path.c_str());
+            save_file << "----------------------" << endl;
+            save_file << "Tax calculation" << endl;
+            save_file << "----------------------" << endl;
+            save_file << fixed << setprecision(2);
+            save_file << "Net income : " << balance << endl;
+            save_file << "Income after deductions : " << balacne_tax << endl;
+            save_file << "tax payable : " << tax << endl;
+            save_file << "----------------------" << endl;
+        save_file.close();
+    }
+    else if (tax_fund == false)
+    {
+        cout << fixed << setprecision(2);
+        cout << "Net income : " << balance << endl;
+        cout << "No need to pay taxes."  << endl;
+        save_file.open(full_path.c_str());
+            save_file << "----------------------" << endl;
+            save_file << "Tax calculation" << endl;
+            save_file << "----------------------" << endl;
+            save_file << fixed << setprecision(2);
+            save_file << "Net income : " << balance << endl;
+            save_file << "No need to pay taxes."  << endl;
+            save_file << "----------------------" << endl;
+        save_file.close();
+        
+    }
+
+
+    
+    
+
 }
 
 int main() {
@@ -438,14 +738,14 @@ int main() {
     }
     else if(choice == 4) {
         
-        calculateSavingsPlan();
+        calculateSavingsPlan(); 
         
     }
     else if(choice == 5) {
         interest_debt();
     }
     else if(choice == 6) {
-       Survival_ratio();
+       Survival_ratio(); 
     }
     else if(choice == 7) {
         liqidity_ratio();
